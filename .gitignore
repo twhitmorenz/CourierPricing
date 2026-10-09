@@ -1,0 +1,108 @@
+## .NET / C# / Visual Studio .gitignore
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Visual Studio cache/options
+.vs/
+.vscode/
+*.VC.db
+*.VC.VC.opendb
+*.sln.ide/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Publish output
+publish/
+PublishScripts/
+*.pubxml
+*.pubxml.user
+*.publishproj
+
+# Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+coverage*.info
+TestResults/
+CoverageReport/
+.coverage/
+*.lcov
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Roslyn / analyzers / build caches
+.sonarqube/
+*.ide/
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+.idea/
+.fake/
+.ionide/
+
+# Profiling / diagnostics
+*.psess
+*.vsp
+*.vspx
+*.sap
+*.dotCover
+*.diagsession
+BenchmarkDotNet.Artifacts/
+
+# Temporary / backup files
+*~
+*.tmp
+*.temp
+*.bak
+*.log
+*.orig
+*.rej
+~$*
+
+# Secrets / local config
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+launchSettings.json.user
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
