@@ -1,5 +1,15 @@
 namespace CourierPricing;
 
+
+/// <summary>
+/// Prices parcels by largest dimension, against a 'Price by Size' table.
+/// 
+/// config: SortedList<int, decimal> of (Threshold Size, Price)
+/// note that 'Threshold Size' is not the limit; it's the smallest size where this option applies, ie. the limit of the lower band.
+/// 
+/// </summary>
+/// <param name="PriceBySize">SortedList of (threshold size, price) where price applies for size >= threshold.</param>
+
 public record ParcelSizeStrategy (SortedList<int, decimal> PriceBySize): IParcelPricingStrategy {
     
     public ItemPrice Price (Parcel parcel)

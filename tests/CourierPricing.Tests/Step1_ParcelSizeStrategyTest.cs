@@ -1,6 +1,6 @@
 ﻿namespace CourierPricing.Tests;
 
-public class ParcelSizeStrategyTest : AParcelPricingTest
+public class Step1_ParcelSizeStrategyTest : AParcelPricingTest
 {
 
 

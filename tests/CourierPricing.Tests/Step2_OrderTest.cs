@@ -1,6 +1,6 @@
 ﻿namespace CourierPricing.Tests;
 
-public class Step2Test : AOrderPricingTest
+public class Step2_OrderTest : AOrderPricingTest
 {
 
 

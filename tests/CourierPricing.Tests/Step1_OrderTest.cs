@@ -1,6 +1,6 @@
 ﻿namespace CourierPricing.Tests;
 
-public class Step1Test : AOrderPricingTest
+public class Step1_OrderTest : AOrderPricingTest
 {
 
 
@@ -11,7 +11,7 @@ public class Step1Test : AOrderPricingTest
 
         var order = new Order([]);
         var result = strategy.Price(order);
-        Assert.Equal(0, result.Items.Count);
+        Assert.Empty(result.Items);
         Assert.Equal(0m, result.Total);
     }
 
@@ -24,7 +24,7 @@ public class Step1Test : AOrderPricingTest
             CreateParcel(5, 5, 5)
         ]);
         var result = strategy.Price(order);
-        Assert.Equal(1, result.Items.Count);
+        Assert.Single(result.Items);
         Assert.Equal(3.00m, result.Total);
     }
 
