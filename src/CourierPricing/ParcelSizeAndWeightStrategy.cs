@@ -14,12 +14,10 @@ namespace CourierPricing;
 public record ParcelSizeAndWeightStrategy : IParcelPricingStrategy {
     
     public List<SizeAndWeight> PriceTable { get; }
-    public decimal OveragePerKg { get; }
 
-    public ParcelSizeAndWeightStrategy (List<SizeAndWeight> PriceTable, decimal OveragePerKg)
+    public ParcelSizeAndWeightStrategy (List<SizeAndWeight> PriceTable)
     {
         this.PriceTable = PriceTable;
-        this.OveragePerKg = OveragePerKg;
     }
 
     public ItemPrice Price (Parcel parcel)
@@ -34,9 +32,9 @@ public record ParcelSizeAndWeightStrategy : IParcelPricingStrategy {
             if (parcelSize >= option.SizeMax)
                 continue;
             int weightOver = Math.Max( parcelWeight-option.WeightMax, 0);
-            decimal weightOverage = weightOver * OveragePerKg;
+            decimal weightOverage = weightOver * option.OveragePerKg;
             decimal price = option.Price + weightOverage;
-            var desc = $"Size up to {option.SizeMax}" + ((weightOver > 0) ? $"; overweight {weightOver} kg" : "");
+            var desc = $"{option.Name}" + ((weightOver > 0) ? $"; overweight {weightOver} kg" : "");
             var optionPrice = new ItemPrice(parcel, desc, price);
 
             // check if it's best
@@ -53,7 +51,7 @@ public record ParcelSizeAndWeightStrategy : IParcelPricingStrategy {
     }
 
 
-    public record SizeAndWeight (int SizeThreshold, int SizeMax, int WeightMax, decimal Price);
+    public record SizeAndWeight (string Name, int SizeThreshold, int SizeMax, int WeightMax, decimal Price, decimal OveragePerKg);
 
 }
 
