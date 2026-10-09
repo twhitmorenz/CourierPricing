@@ -3,6 +3,7 @@
 public class Order {
     public List<Parcel> Items { get; set; } = [];
 
+    public ShippingType Shipping { get; set; } = ShippingType.NORMAL;
 
     public Order (List<Parcel> Items) 
     {
@@ -10,3 +11,6 @@ public class Order {
     }
 
 }
+
+
+public enum ShippingType {NORMAL, SPEEDY};
